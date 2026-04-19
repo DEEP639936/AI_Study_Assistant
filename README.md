@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StudyAI Pro
 
 A production-style AI Study Assistant built with Flask, Gemini, and a modern chat-style interface.
@@ -38,3 +39,6 @@ PORT=5000
 - `POST /key-points`
 - `POST /flashcards`
 "# AI_Study_Assitant_By_Deep" 
+=======
+# AI_Study_Assistant
+>>>>>>> f916f05740c441d258c4072ab930b62d40404ea6
