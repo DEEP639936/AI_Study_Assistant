@@ -179,11 +179,15 @@ async function sendMessage() {
   const typingId = addTypingIndicator();
 
   try {
-    const res = await fetch('/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question, filename: state.activeDoc }),
-    });
+    // FIX: Connect to n8n webhook instead of local backend
+const res = await fetch('https://deepbutani009.app.n8n.cloud/webhook/ask-question', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    question,
+    filename: state.activeDoc || ''
+  }),
+});
     const data = await res.json();
     removeTypingIndicator(typingId);
     if (!data.success) throw new Error(data.error || 'Chat failed');
